@@ -206,7 +206,7 @@ def load_templates(file, output_file=None):
     if output_file:
         output = open(output_file, 'w')
     for line in file:
-        #line = line.decode('utf-8')
+        line = line.decode('utf-8')
         if '<' not in line:  # faster than doing re.search()
             if inText:
                 page.append(line)
@@ -357,7 +357,7 @@ def process_dump(input_file, template_file, out_file, file_size, file_compress,
 
     # collect siteinfo
     for line in input:
-        line = line #.decode('utf-8')
+        line = line.decode('utf-8')
         m = tagRE.search(line)
         if not m:
             continue
